@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workattack-BIO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://cdn.discordapp.com/attachments/1077146885581717516/1297182750763122698/video_game-minecraft-616936.jpg?ex=6714ff14&is=6713ad94&hm=1b6b66fb7f34c5584786810387ce6c5f194033b330576e5168adebd4012ef0c7&'); /* Hintergrundbild hinzufügen */
+            background-size: cover; /* Bild so skalieren, dass es den gesamten Hintergrund ausfüllt */
+            background-position: center; /* Bild zentrieren */
+            overflow: hidden;
+            cursor: pointer; /* Zeigt an, dass man klicken kann */
+        }
+        .container {
+            width: 800px; /* Feste Breite für den Container */
+            height: 600px; /* Feste Höhe für den Container */
+            padding: 20px;
+            background-color: black;
+            border-radius: 0.4rem;
+            box-shadow: rgb(255, 0, 0) 0px 0px 30px 0.5px; /* Box-Schatten in Rot */
+            backdrop-filter: blur(10px);
+            opacity: 1; /* Sichtbarkeit auf 1 setzen */
+            transform: translateY(0); /* Keine Verschiebung */
+            text-align: center;
+            position: relative; /* Position relative for positioning the eye icon */
+        }
+        h1 {
+            color: white;
+            display: flex;
+            align-items: center; /* Align items vertically */
+            justify-content: center; /* Center items horizontally */
+        }
+        .profile-pic {
+            width: 150px; /* Breite des Profilbilds */
+            height: 150px; /* Höhe des Profilbilds */
+            border-radius: 50%; /* Macht das Bild rund */
+            margin: 20px 0;
+            object-fit: cover; /* Schneidet das Bild passend für die runde Form */
+            cursor: pointer; /* Cursor ändert sich, wenn man über das Bild fährt */
+        }
+        .link-btn {
+            display: flex; /* Flexbox für gleichmäßige Verteilung */
+            justify-content: flex-start; /* Linksbündige Verteilung von Inhalten */
+            align-items: center; /* Vertikale Zentrierung */
+            padding: 12px 20px; /* Innenabstand */
+            margin: 10px auto; /* Abstände oben und unten */
+            border: 2px solid rgb(255, 0, 0); /* Rahmenfarbe in Rot */
+            border-radius: 0.4rem; /* Abgerundete Ecken */
+            background-color: rgb(16, 16, 19); /* Hintergrundfarbe */
+            color: white; /* Textfarbe */
+            text-decoration: none; /* Unterstreichung entfernen */
+            font-size: 16px; /* Schriftgröße */
+            transition: background-color 0.3s, filter 0.3s; /* Übergangseffekte */
+        }
+        .link-btn:hover {
+            background-color: rgb(255, 0, 0); /* Hintergrundfarbe beim Hover in Rot */
+            filter: brightness(1.25); /* Helligkeit beim Hover */
+        }
+        .eye-icon {
+            position: absolute; /* Absolute positioning for the eye icon */
+            top: 20px; /* Adjust top position */
+            left: 20px; /* Adjust left position */
+            width: 20px; /* Width of the eye icon */
+            height: 20px; /* Height of the eye icon */
+            fill: rgb(255, 0, 0); /* Farbe des Augensymbols in Rot */
+        }
+        .visitor-count {
+            position: absolute; /* Absolute positioning for the visitor count */
+            top: 20px; /* Adjust top position */
+            left: 50px; /* Position it next to the eye */
+            color: rgb(255, 0, 0); /* Farbe der Besucheranzahl in Rot */
+            font-size: 16px; /* Schriftgröße für die Besucheranzahl */
+            margin: 0; /* Entferne den Standardabstand */
+        }
+        .icon {
+            margin-left: 8px; /* Abstand zwischen dem Namen und dem Icon */
+            filter: drop-shadow(rgb(255, 0, 0) 0px 0px 3.5px); /* Drop shadow für das Icon in Rot */
+            width: 24px; /* Set width for the icon */
+            height: 24px; /* Set height for the icon */
+        }
+        .bio {
+            color: white; /* Textfarbe für die Bio */
+            margin-top: 20px; /* Abstand nach oben */
+            font-size: 14px; /* Schriftgröße für die Bio */
+        }
+    </style>
+    <script defer data-domain="workattack.tiiny.site" src="asset/js/plausible.js"></script>
+    <script type="text/javascript" src="asset/ad-script.js"></script>
+</head>
+<body>
+    <div class="container" id="wobble-box">
+        <a href="https://cdn.discordapp.com/attachments/1077146885581717516/1297172902772346951/myhsticsmp.png?ex=6714f5e8&is=6713a468&hm=e0cc99d41cf1f5e4f90ad000c3e5c1b0a5c5f4d89d0b959a905bdfe850abec5e&" id="profile-link"> <!-- Hier die URL für das Profilbild eingeben -->
+            <img src="https://cdn.discordapp.com/attachments/1077146885581717516/1297172902772346951/myhsticsmp.png?ex=6714f5e8&is=6713a468&hm=e0cc99d41cf1f5e4f90ad000c3e5c1b0a5c5f4d89d0b959a905bdfe850abec5e&" alt="Profile Picture" class="profile-pic"> <!-- Hier die Bild-URL eingeben -->
+        </a>
+        <h1>Workattack <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C5.371 0 0 5.371 0 12c0 6.629 5.371 12 12 12s12-5.371 12-5.371-3-5-8-5zm0 7c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2z"/></svg></h1> <!-- SVG-Symbol rechts neben dem Namen -->
+        
+        <a href="https://discord.gg/QReM4XFzau" target="_blank" class="link-btn">Discord | MyhsticMC</a>
+        <a href="https://www.twitch.tv/myhsticmc" target="_blank" class="link-btn">Twitch</a>
+
+        <!-- Eye icon SVG -->
+        <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M8 3C3 3 0 8 0 8s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2z"/>
+        </svg>
+        <!-- Visitor count -->
+        <p class="visitor-count" id="visitor-count">0</p>
+        
+        <!-- Bio Section -->
+        <p class="bio">Ich bin ein leidenschaftlicher Entwickler und der Visionär hinter dem Minecraft-Server MyhsticMC. Meine Reise durch die Welt der Programmierung ist geprägt von Kreativität und dem Streben, neue Horizonte zu entdecken. Ich liebe es, innovative Projekte zu schaffen, die Menschen inspirieren und verbinden. Es erfüllt mich mit Freude, anderen auf ihrem Weg zu helfen und gemeinsam an etwas Großem zu arbeiten. Lass uns zusammen träumen, kreieren und die Grenzen der digitalen Welt erweitern!</p>
+    </div>
+
+    <script>
+        const wobbleBox = document.getElementById('wobble-box');
+        const visitorCountElement = document.getElementById('visitor-count');
+
+        // Initial visitor count setup
+        let visitorCount = localStorage.getItem('visitorCount') ? parseInt(localStorage.getItem('visitorCount')) : 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        visitorCountElement.textContent = visitorCount; // Update displayed count
+
+        // Initialize the container's state
+        wobbleBox.style.display = 'block'; // Show the container directly
+
+        document.addEventListener('mousemove', (e) => {
+            const xPos = (e.clientX / window.innerWidth - 0.5) * 60; // Increased sensitivity
+            const yPos = (e.clientY / window.innerHeight - 0.5) * 60; // Increased sensitivity
+            wobbleBox.style.transform = `perspective(1000px) rotateX(${yPos}deg) rotateY(${xPos}deg) scale3d(1, 1, 1)`; // Wobble effect
+        });
+    </script>
+</body>
+</html>
